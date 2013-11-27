@@ -1,8 +1,7 @@
-#include "SDL_Setup.h"
-#include "stdafx.h"
 #include "SDL.h"
 #include "SDL_image.h"
-
+#include "SDL_Setup.h"
+#include <iostream>
 
 SDL_Setup::SDL_Setup(bool* quit)
 {

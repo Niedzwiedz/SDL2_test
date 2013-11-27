@@ -1,6 +1,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
-#include "stdafx.h"
+#include "Main.h"
+#include <iostream>
 
 Main::Main(void)
 {
@@ -9,7 +10,7 @@ Main::Main(void)
 	SDLiclass = new SDL_Setup(&quit);
 
 	GrassTex=NULL;
-	GrassTex= IMG_LoadTexture(SDLiclass->GetRenderer, "data/grass.bmp");
+	GrassTex= IMG_LoadTexture(SDLiclass->GetRenderer(), "data/grass.bmp");
 
 	if(GrassTex == NULL){
 		std::cout << "Couldnt find texture" << std::endl;
@@ -20,7 +21,7 @@ Main::Main(void)
 	GrassRect.h=768;
 
 	playa=NULL;
-	playa= IMG_LoadTexture(SDLiclass->GetRenderer, "data/playa.bmp");
+	playa= IMG_LoadTexture(SDLiclass->GetRenderer(), "data/playa.bmp");
 
 	if(playa == NULL){
 		std::cout << "Couldnt find texture" << std::endl;
@@ -36,19 +37,16 @@ Main::~Main(void)
 {
 	SDL_DestroyTexture(GrassTex);
 	SDL_DestroyTexture(playa);
-	SDL_DestroyWindow(window);
-	SDL_DestroyRenderer(SDLiclass->GetRenderer);
-	delete mainEvent;
 }
 
 void Main::GameLoop(){
-	while(!quit && mainEvent->type !=SDL_QUIT){
-		SDL_PollEvent(mainEvent);
-		SDL_RenderClear(SDLiclass->GetRenderer);
+	while(!quit && SDLiclass->GetMainEvent()->type !=SDL_QUIT){
+		SDL_PollEvent(SDLiclass->GetMainEvent());
+		SDL_RenderClear(SDLiclass->GetRenderer());
 
-		SDL_RenderCopy(renderer, GrassTex, NULL, &GrassRect);
-		SDL_RenderCopy(renderer, playa, NULL, &PlayaRect);
+		SDL_RenderCopy(SDLiclass->GetRenderer(), GrassTex, NULL, &GrassRect);
+		SDL_RenderCopy(SDLiclass->GetRenderer(), playa, NULL, &PlayaRect);
 
-		SDL_RenderPresent(renderer);
+		SDL_RenderPresent(SDLiclass->GetRenderer());
 	}
 }
