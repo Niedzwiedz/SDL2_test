@@ -33,3 +33,12 @@ SDL_Renderer* SDL_Setup::GetRenderer(){
 SDL_Event* SDL_Setup::GetMainEvent(){
 	return mainEvent;
 }
+
+void SDL_Setup::Begin(){
+	SDL_PollEvent(mainEvent);
+	SDL_RenderClear(renderer);
+}
+
+void SDL_Setup::End(){
+	SDL_RenderPresent(renderer);
+}

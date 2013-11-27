@@ -11,5 +11,8 @@ public:
 
 	SDL_Renderer* GetRenderer();
 	SDL_Event* GetMainEvent();
+
+	void Begin();
+	void End();
 };
 
