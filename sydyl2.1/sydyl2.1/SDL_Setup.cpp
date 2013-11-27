@@ -6,7 +6,7 @@
 SDL_Setup::SDL_Setup(bool* quit)
 {
 	window = NULL;
-	window = SDL_CreateWindow("Some bullshit on classes", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 0, 0, SDL_WINDOW_FULLSCREEN_DESKTOP);
+	window = SDL_CreateWindow("Some bullshit on classes", 0, 0, 0, 0, SDL_WINDOW_FULLSCREEN_DESKTOP);
 	if(window == NULL){
 		std::cout << "Window, couldnt be created" << std::endl;
 		*quit = true;

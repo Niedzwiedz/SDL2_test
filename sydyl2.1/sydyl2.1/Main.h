@@ -10,5 +10,6 @@ private:
 	bool quit;
 	SDL_Setup* SDLiclass;
 	EasySprite* trawa;
+	EasySprite* player;
 };
 

@@ -8,6 +8,7 @@ Main::Main(void)
 	quit = false;
 	SDLiclass = new SDL_Setup(&quit);
 	trawa = new EasySprite(SDLiclass->GetRenderer(), "data/grass.bmp", 0,0,1360,768);
+	player = new EasySprite(SDLiclass->GetRenderer(), "data/playa.bmp", 0,0,100,100);
 }
 
 
@@ -19,6 +20,7 @@ void Main::GameLoop(){
 	while(!quit && SDLiclass->GetMainEvent()->type !=SDL_QUIT){
 		SDLiclass->Begin();
 		trawa -> Draw();
+		player -> Draw();
 		SDLiclass->End();
 	}
 }
