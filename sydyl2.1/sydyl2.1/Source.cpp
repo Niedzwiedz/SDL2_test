@@ -9,4 +9,4 @@ int main(int argc, char **argv){
 	glowny.GameLoop();
 
 	return 0;
-}//Dodaj sdl_image bo bêdzie chuj!!!
+}
