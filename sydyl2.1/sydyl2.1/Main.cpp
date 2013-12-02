@@ -16,6 +16,8 @@ Main::Main(int p_SCR_WIDTH, int p_SCR_HEIGHT)
 	MoveDown = false;
 	MoveLeft = false;
 	MoveRight = false;
+
+	TimeCheck = SDL_GetTicks();
 }
 
 
@@ -73,19 +75,22 @@ void Main::GameLoop(){
 		default:
 			break;
 		}	
-		if(MoveUp){
-			player->SetY(player->GetY() - 1);
+		if(TimeCheck+10 < SDL_GetTicks())
+		{
+			if(MoveUp){
+				player->SetY(player->GetY() - 2);
+			}
+			if(MoveDown){
+				player->SetY(player->GetY() + 2);
+			}
+			if(MoveLeft){
+				player->SetX(player->GetX() - 2);
+			}
+			if(MoveRight){
+				player->SetX(player->GetX() + 2);
+			}
+			TimeCheck=SDL_GetTicks();
 		}
-		else if(MoveDown){
-			player->SetY(player->GetY() + 1);
-		}
-		else if(MoveLeft){
-			player->SetX(player->GetX() - 1);
-		}
-		else if(MoveRight){
-			player->SetX(player->GetX() + 1);
-		}
-
 		SDLiclass->End();
 	}
 }

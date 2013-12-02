@@ -18,5 +18,7 @@ private:
 	bool MoveDown;
 	bool MoveLeft;
 	bool MoveRight;
+
+	int TimeCheck;
 };
 
