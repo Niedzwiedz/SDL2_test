@@ -29,3 +29,22 @@ void EasySprite::Draw(){
 	SDL_RenderCopy(renderer, image, NULL, &rect);
 
 }
+void EasySprite::SetX(int X){
+	rect.x = X;
+}
+
+void EasySprite::SetY(int Y){
+	rect.y = Y;
+}
+
+void EasySprite::SetPosition(int X, int Y){
+	rect.x = X;
+	rect.y = Y;
+}
+
+int EasySprite::GetX(){
+	return rect.x;
+}
+int EasySprite::GetY(){
+	return rect.y;
+}

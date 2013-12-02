@@ -3,10 +3,12 @@
 #include "SDL_Setup.h"
 #include <iostream>
 
-SDL_Setup::SDL_Setup(bool* quit)
+SDL_Setup::SDL_Setup(bool* quit, int pSCREEN_WIDTH, int pSCREEN_HEIGHT)
 {
+	SCREEN_WIDTH=pSCREEN_WIDTH;
+	SCREEN_HEIGHT=pSCREEN_HEIGHT;
 	window = NULL;
-	window = SDL_CreateWindow("Some bullshit on classes", 0, 0, 0, 0, SDL_WINDOW_FULLSCREEN_DESKTOP);
+	window = SDL_CreateWindow("Some bullshit on classes", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
 	if(window == NULL){
 		std::cout << "Window, couldnt be created" << std::endl;
 		*quit = true;
