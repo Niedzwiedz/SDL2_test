@@ -1,5 +1,6 @@
 #include "SDL_Setup.h"
 #include "EasySprite.h"
+#include "Hero.h"
 class Main
 {
 public:
@@ -12,13 +13,6 @@ private:
 	bool quit;
 	SDL_Setup* SDLiclass;
 	EasySprite* trawa;
-	EasySprite* player;
 
-	bool MoveUp;
-	bool MoveDown;
-	bool MoveLeft;
-	bool MoveRight;
-
-	int TimeCheck;
 };
 
