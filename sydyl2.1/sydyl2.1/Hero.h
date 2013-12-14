@@ -1,10 +1,11 @@
-#pragma once
-#include "EasySprite.h"
 #include "SDL_Setup.h"
+#include "EasySprite.h"
+
+
 class Hero
 {
 public:
-	Hero(SDL_Setup* pSDLClass, bool quit);
+	Hero(SDL_Setup* pSDLClass);
 	~Hero(void);
 
 	void HeroMove();
@@ -20,7 +21,5 @@ private:
 	bool MoveDown;
 	bool MoveLeft;
 	bool MoveRight;
-
-	bool quit;
 };
 

@@ -1,5 +1,4 @@
-#include "SDL_Setup.h"
-#include "EasySprite.h"
+#include <iostream>
 #include "Hero.h"
 class Main
 {
@@ -12,7 +11,9 @@ private:
 	int SCREEN_HEIGHT;
 	bool quit;
 	SDL_Setup* SDLiclass;
+	Hero* player;
 	EasySprite* trawa;
+	
 
 };
 

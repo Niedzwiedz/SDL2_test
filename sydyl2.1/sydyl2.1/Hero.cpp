@@ -1,38 +1,37 @@
-#include "Hero.h"
+#include <iostream>
 #include "SDL.h"
 #include "SDL_image.h"
+#include "Hero.h"
+#include <math.h>
 
-Hero::Hero(SDL_Setup* pSDLClass, bool pquit )
-{
+Hero::Hero(SDL_Setup* pSDLClass){
 	SDLclass = pSDLClass;
-	quit = pquit;
 	TimeCheck = SDL_GetTicks();
+	MoveUp = false;
+	MoveDown = false;
+	MoveLeft = false;
+	MoveRight = false;
 	player = new EasySprite(SDLclass->GetRenderer(), "data/playa.bmp", 100,100,10,10);
+	
 }
-
-
-Hero::~Hero(void)
-{
+Hero::~Hero(void){
+	delete player;
 }
-
 void Hero::HeroMove(){
 	switch(SDLclass->GetMainEvent()->type){
 		case SDL_KEYDOWN:
 			switch(SDLclass->GetMainEvent()->key.keysym.sym){
-			case SDLK_UP:
+			case SDLK_w:
 				MoveUp = true;
 				break;
-			case SDLK_DOWN:
+			case SDLK_s:
 				MoveDown = true;
 				break;
-			case SDLK_LEFT:
+			case SDLK_a:
 				MoveLeft = true;
 				break;
-			case SDLK_RIGHT:
+			case SDLK_d:
 				MoveRight = true;
-				break;
-			case SDLK_ESCAPE:
-				quit = true;
 				break;
 			default:
 				break;
@@ -40,16 +39,16 @@ void Hero::HeroMove(){
 			break;
 		case SDL_KEYUP:
 			switch(SDLclass->GetMainEvent()->key.keysym.sym){
-			case SDLK_UP:
+			case SDLK_w:
 				MoveUp = false;
 				break;
-			case SDLK_DOWN:
+			case SDLK_s:
 				MoveDown = false;
 				break;
-			case SDLK_LEFT:
+			case SDLK_a:
 				MoveLeft = false;
 				break;
-			case SDLK_RIGHT:
+			case SDLK_d:
 				MoveRight = false;
 				break;
 			default:
@@ -59,8 +58,7 @@ void Hero::HeroMove(){
 		default:
 			break;
 		}	
-		if(TimeCheck+10 < SDL_GetTicks())
-		{
+		if(TimeCheck+10 < SDL_GetTicks()){
 			if(MoveUp){
 				player->SetY(player->GetY() - 2);
 			}
@@ -78,5 +76,5 @@ void Hero::HeroMove(){
 }
 
 void Hero::Draw(){
-	player->Draw;
+	player->Draw();
 }

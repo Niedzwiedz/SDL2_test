@@ -11,7 +11,7 @@ EasySprite::EasySprite(SDL_Renderer* p_renderer, std::string FilePath, int x, in
 	image= IMG_LoadTexture(renderer, FilePath.c_str());
 
 	if(image == NULL){
-		std::cout << "Couldnt load" << FilePath.c_str() <<  std::endl;
+		std::cout << "Couldn't load" << FilePath.c_str() <<  std::endl;
 	}
 	rect.x = x;
 	rect.y = y;
@@ -27,7 +27,6 @@ EasySprite::~EasySprite(void)
 
 void EasySprite::Draw(){
 	SDL_RenderCopy(renderer, image, NULL, &rect);
-
 }
 void EasySprite::SetX(int X){
 	rect.x = X;
