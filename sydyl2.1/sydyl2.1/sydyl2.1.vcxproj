@@ -69,18 +69,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="EasySprite.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="KolizjaRect.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SDL_Setup.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Srodowisko.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
     <ClInclude Include="EasySprite.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="KolizjaRect.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="SDL_Setup.h" />
-    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Srodowisko.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="sydyl2.1.rc" />
@@ -88,4 +93,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="sydyl2.1.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

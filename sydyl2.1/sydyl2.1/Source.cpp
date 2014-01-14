@@ -1,12 +1,10 @@
 #include "SDL.h"
 #include "SDL_image.h"
-#include "stdafx.h"
-
-
+#include "Main.h"
 
 
 int main(int argc, char **argv){
-	Main* glowny = new Main(1360, 768);
+	Main* glowny = new Main(1366, 786);
 
 	glowny->GameLoop();
 

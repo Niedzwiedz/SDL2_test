@@ -1,5 +1,3 @@
-#include "SDL.h"
-#include "SDL_image.h"
 #include "SDL_Setup.h"
 #include <iostream>
 

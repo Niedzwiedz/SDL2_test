@@ -1,3 +1,8 @@
+#ifndef SDLSETUP
+#define SDLSETUP
+#include <iostream>
+#include<Windows.h>
+#include"SDL.h"
 
 class SDL_Setup
 {
@@ -10,7 +15,6 @@ private:
 public:
 	SDL_Setup(bool* quit, int pSCREEN_WIDTH, int pSCREEN_HEIGHT);
 	~SDL_Setup(void);
-
 	
 	SDL_Renderer* GetRenderer();
 	SDL_Event* GetMainEvent();
@@ -19,3 +23,4 @@ public:
 	void End();
 };
 
+#endif
